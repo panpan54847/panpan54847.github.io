@@ -1,0 +1,13 @@
+title: panpan · 个人博客
+description: 记录我的学习过程、练习与阶段性笔记。
+url: https://panpan54847.github.io
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+github_username: panpan54847
+markdown: kramdown
+permalink: /posts/:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
