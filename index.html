@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<section id="top" class="wrap hero" aria-labelledby="hero-title">
+  <div>
+    <p class="eyebrow">Personal blog · {{ 'now' | date: '%Y' }}</p>
+    <h1 id="hero-title">你好，我是<br>{{ site.title | split: '·' | first }}。</h1>
+    <p class="hero-copy">这里记录我在学习路上的练习、笔记和阶段性想法。把每一步整理下来，慢慢积累成自己的知识。</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#writing">读读我的文章</a>
+      <a class="button secondary" href="https://github.com/{{ site.github_username }}">访问 GitHub</a>
+    </div>
+  </div>
+  <div class="hero-card" aria-label="Panpan 的个人标记"><div class="avatar">P</div></div>
+</section>
+
+<section id="writing" class="wrap section" aria-labelledby="writing-title">
+  <div class="section-heading"><div><p class="eyebrow">Latest notes</p><h2 id="writing-title">最近写了什么</h2><div class="rule"></div></div><p>学习笔记和实践记录都写在这里，持续更新。</p></div>
+  <div class="article-grid">
+    {% for post in site.posts limit: 6 %}
+    <article class="card">
+      <div class="card-meta">{{ post.date | date: '%Y.%m.%d' }}{% if post.tags %} · {{ post.tags | first }}{% endif %}</div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+      <a class="card-link" href="{{ post.url | relative_url }}">阅读文章 →</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="projects" class="wrap section" aria-labelledby="projects-title">
+  <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2 id="projects-title">我的项目</h2><div class="rule"></div></div><p>先从这个博客开始，之后再把新的学习成果整理到这里。</p></div>
+  <div class="project-grid">
+    <article class="card"><div class="card-meta">PERSONAL BLOG</div><h3>学习手记</h3><p>用 Markdown 写作、由 Jekyll 生成的个人博客，记录学习过程与实践笔记。</p><a class="card-link" href="{{ '/' | relative_url }}#writing">查看文章 →</a></article>
+  </div>
+</section>
